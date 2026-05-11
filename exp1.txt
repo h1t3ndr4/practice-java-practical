@@ -1,0 +1,39 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Main1 extends Frame implements KeyListener {
+
+    String msg = "Press any key...";
+
+    Main1() {
+
+        setTitle("Key Status Demo");
+        setSize(500, 300);
+        setVisible(true);
+
+        addKeyListener(this);
+    }
+
+    public void keyPressed(KeyEvent e) {
+        msg = "Key Pressed : " + e.getKeyChar();
+        repaint();
+    }
+
+    public void keyReleased(KeyEvent e) {
+        msg = "Key Released : " + e.getKeyChar();
+        repaint();
+    }
+
+    public void keyTyped(KeyEvent e) {
+        msg = "Key Typed : " + e.getKeyChar();
+        repaint();
+    }
+
+    public void paint(Graphics g) {
+        g.drawString(msg, 150, 150);
+    }
+
+    public static void main(String[] args) {
+        new Main1();
+    }
+}
