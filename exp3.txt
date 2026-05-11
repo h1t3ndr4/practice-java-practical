@@ -1,0 +1,65 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Main3 extends Frame {
+
+    TextField t1, t2, t3;
+    Button b;
+
+    Main3() {
+
+        setLayout(new FlowLayout());
+
+        t1 = new TextField(10);
+        t2 = new TextField(10);
+        t3 = new TextField(10);
+
+        b = new Button("Show Result");
+
+        add(new Label("Maths"));
+        add(t1);
+
+        add(new Label("Science"));
+        add(t2);
+
+        add(new Label("English"));
+        add(t3);
+
+        add(b);
+
+        b.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+
+                int a = Integer.parseInt(t1.getText());
+                int b = Integer.parseInt(t2.getText());
+                int c = Integer.parseInt(t3.getText());
+
+                int total = a + b + c;
+
+                double per = total / 3.0;
+
+                // New Result Window
+                Frame f = new Frame("Result");
+
+                f.setLayout(new FlowLayout());
+
+                f.add(new Label("Total = " + total));
+                f.add(new Label("Percentage = " + per));
+
+                f.setSize(300, 200);
+
+                f.setVisible(true);
+            }
+        });
+
+        setSize(400, 300);
+
+        setVisible(true);
+    }
+
+    public static void main(String args[]) {
+
+        new Main3();
+    }
+}
