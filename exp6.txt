@@ -1,0 +1,28 @@
+import java.net.*;
+
+public class Main6 {
+
+    public static void main(String args[]) {
+
+        try {
+
+            // getByName()
+            InetAddress a = InetAddress.getByName("www.google.com");
+
+            System.out.println("Host Name : " + a.getHostName());
+
+            System.out.println("IP Address : " + a.getHostAddress());
+
+            // getLocalHost()
+            InetAddress b = InetAddress.getLocalHost();
+
+            System.out.println("\nLocal Host : " + b.getHostName());
+
+            System.out.println("Local IP : " + b.getHostAddress());
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+}
