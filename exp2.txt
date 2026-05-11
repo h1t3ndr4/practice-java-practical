@@ -1,0 +1,40 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Main2 extends Frame {
+
+    Main2() {
+
+        setSize(400, 300);
+        setVisible(true);
+
+        addMouseListener(new MouseAdapter() {
+
+            public void mouseClicked(MouseEvent e) {
+
+                Graphics g = getGraphics();
+
+                g.drawString("Mouse Clicked", 100, 150);
+            }
+
+            public void mouseEntered(MouseEvent e) {
+
+                Graphics g = getGraphics();
+
+                g.drawString("Mouse Entered", 100, 170);
+            }
+
+            public void mouseExited(MouseEvent e) {
+
+                Graphics g = getGraphics();
+
+                g.drawString("Mouse Exited", 100, 190);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+
+        new Main2();
+    }
+}
